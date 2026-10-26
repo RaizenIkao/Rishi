@@ -1,39 +1,45 @@
 # RISHI
 
-RISHI est une application web de collection de cartes anime/manga en mode local-first, pensée pour évoluer vers un backend Supabase réel.
+RISHI est une application communautaire de collection de cartes anime/manga, pensée pour une V1 fonctionnelle en mode démonstration locale et prête à évoluer vers Supabase.
 
-## Démarrage rapide
+## Démarrage
 
-1. Clonez le dépôt.
-2. Installez les dépendances : `npm install`
-3. Démarrez le projet : `npm run dev`
-4. Construisez le projet : `npm run build`
+```bash
+npm install
+npm run dev
+```
 
-## Modes disponibles
+## Build de production
 
-- Mode local : sauvegarde auto dans le navigateur, usage immédiat sans backend.
-- Mode en ligne : configuration Supabase via variables `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`.
+```bash
+npm run build
+```
 
-## Déploiement GitHub Pages
+## GitHub Pages
 
-Le projet est configuré avec `vite.config.ts` et `base: './'` pour un déploiement compatible GitHub Pages.
+Le projet est prêt pour le déploiement statique sur GitHub Pages avec Vite.
 
-1. `npm install`
-2. `npm run build`
-3. Uploadez le dossier `dist/` dans GitHub Pages ou via GitHub Actions.
+```bash
+npm run deploy
+```
 
-## Structure
+Ou bien publiez le dossier `dist/` via GitHub Pages / GitHub Actions.
 
-- `src/App.tsx` : logique principale et navigation.
-- `src/data/cards.ts` : catalogue, univers, boosters et données démonstration.
-- `src/styles.css` : design system et interface.
+## Modes
 
-## Supabase
+- Mode local : sauvegarde dans le navigateur via localStorage.
+- Mode cloud : prêt pour l’authentification Supabase et les données distantes.
 
-Le dépôt contient un exemple de configuration publique dans `.env.example`.
+## Structure principale
 
-Pour le mode en ligne, ajoutez ensuite les tables, migrations et politiques RLS dans votre instance Supabase.
+- `src/App.tsx` : application et navigation
+- `src/data/cards.ts` : catalogues, univers, cartes et boosters de démonstration
+- `src/styles.css` : UI premium sombre
 
-## Limites connues
+## Variables d’environnement
 
-Cette V1 fonctionne en local, avec une démonstration prête à l'emploi et une architecture adaptée à l'ajout d'un backend réel. Elle ne prétend pas avoir un vrai système d'authentification ou de combat multijoueur sans configuration Supabase.
+Un exemple public est fourni dans `.env.example`.
+
+## Limites
+
+Cette V1 correspond à une démonstration jouable locale, conçue pour être étendue avec Supabase, sécurité serveur et données partagées.
